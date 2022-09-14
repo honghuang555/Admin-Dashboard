@@ -38,6 +38,10 @@ dependencies:
   get: 4.3.8
   fluro: ^2.0.3
   horizontal_data_table: ^3.0.0
+  firebase_auth: ^1.0.0
+  flutter_admin_scaffold:
+  cloud_functions: 3.0.3
+
 
 dev_dependencies:
   flutter_test:

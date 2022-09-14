@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -16,45 +15,52 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="A new Flutter application.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="admin">
+  <meta name="apple-mobile-web-app-title" content="client_management">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>admin</title>
+  <title>client_management</title>
   <link rel="manifest" href="manifest.json">
-  <!-- Styling for loading indicator -->
-  <style>
-    .container {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #212332;
-    }
-
-    .indicator {
-      width: 10vw;
-    }
-  </style>
-
 </head>
-
-<body style="overflow: hidden">
-  <!-- Loading Indicator -->
-  <div id="loading_container" class="container">
-    <img src="./assets/loading.gif" alt="loading indicator" class="indicator">
-  </div>
+<body id="app-container">
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-storage.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDjFMs4Om5NQQdeQLcrgZqhbsBB5KdFVvU",
+    authDomain: "aini-cdf12.firebaseapp.com",
+    projectId: "aini-cdf12",
+    storageBucket: "aini-cdf12.appspot.com",
+    messagingSenderId: "630360817715",
+    appId: "1:630360817715:web:34a78528fdcf69d706e346",
+    measurementId: "G-GWCVX2SS2S"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-functions.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('flutter-first-frame', function () {
@@ -62,40 +68,6 @@
       });
     }
   </script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDjFMs4Om5NQQdeQLcrgZqhbsBB5KdFVvU",
-      authDomain: "aini-cdf12.firebaseapp.com",
-      projectId: "aini-cdf12",
-      storageBucket: "aini-cdf12.appspot.com",
-      messagingSenderId: "630360817715",
-      appId: "1:630360817715:web:34a78528fdcf69d706e346",
-      measurementId: "G-GWCVX2SS2S"
-    };
-    
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
   <script src="main.dart.js" type="application/javascript"></script>
-  <!-- Removes the loading indicator after 10 seconds -->
-  <script>
-    window.onload = function () {
-      setTimeout(function () {
-        var loadingIndicator = document.getElementById("loading_container");
-        if (loadingIndicator) {
-          loadingIndicator.remove();
-        }
-      }, 10000)
-    }
-  </script>
 </body>
-
 </html>
